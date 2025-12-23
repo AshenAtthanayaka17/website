@@ -5,54 +5,139 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home | Ashen Atthanayaka</title>
-    <link rel="stylesheet" href="../CSS/style.css"> <!-- Reuse global if needed -->
-    <link rel="stylesheet" href="../CSS/home.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Poppins:wght@300;400;600&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <div class="profile-img-container">
-                <img src="../Assets/IMG/portrait.png" alt="Ashen Atthanayaka" class="profile-img">
-            </div>
-            <h1>Hi, I'm Ashen Atthanayaka</h1>
-            <p class="typed-text"><span id="typed"></span><span class="cursor">|</span></p>
-            <p class="bio">Passionate developer creating innovative digital solutions.</p>
-            <div class="social-links">
-                <a href="https://linkedin.com/in/yourprofile" target="_blank"><img src="../Assets/Icons/linkedin.svg"
-                        alt="LinkedIn"></a>
-                <a href="https://github.com/yourprofile" target="_blank"><img src="../Assets/Icons/github.svg"
-                        alt="GitHub"></a>
-                <a href="https://instagram.com/yourprofile" target="_blank"><img src="../Assets/Icons/instagram.svg"
-                        alt="Instagram"></a>
-            </div>
-            <a href="#about" class="cta-btn">Learn More →</a>
-        </div>
-    </section>
 
-    <!-- Navigation (simple for now, can expand) -->
-    <nav class="nav">
-        <ul>
-            <li><a href="home.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="portfolio.html">Portfolio</a></li>
-            <li><a href="resume.html">Resume</a></li>
-            <li><a href="gallery.html">Gallery</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
+    <!-- Page Loader (reused from index) -->
+    <div id="loader">
+        <div class="loader-spinner"></div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar glass">
+        <div class="nav-container">
+            <h2 class="nav-logo" style="font-family: 'Orbitron', sans-serif; color: #64c8ff;">Ashen</h2>
+            <ul class="nav-menu">
+                <li><a href="HTMLs/home.html" class="active">Home</a></li>
+                <li><a href="HTMLs/about.html">About</a></li>
+                <li><a href="HTMLs/portfolio.html">Portfolio</a></li>
+                <li><a href="HTMLs/resume.html">Resume</a></li>
+                <li><a href="HTMLs/gallery.html">Gallery</a></li>
+                <li><a href="HTMLs/contact.html">Contact</a></li>
+            </ul>
+        </div>
     </nav>
 
-    <!-- Placeholder for other sections -->
-    <section id="about" class="section">
-        <div class="container">
-            <h2>About Me</h2>
-            <p>Add your detailed about section here or link to about.html.</p>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content glass">
+            <img src="Assets/IMG/portrait.png" alt="Ashen Atthanayaka" class="portrait">
+            <h1>Hello, I'm <span style="color: #64c8ff;">Ashen Atthanayaka</span></h1>
+            <p class="tagline">Full-Stack Developer | UI/UX Enthusiast | Tech Innovator</p>
+            <p class="bio">Passionate about crafting modern web experiences with cutting-edge technologies. Based in Sri
+                Lanka, building the future one line of code at a time.</p>
+            <div class="hero-buttons">
+                <a href="HTMLs/portfolio.html" class="btn-glow">View Portfolio</a>
+                <a href="HTMLs/contact.html" class="btn-glow outline">Get In Touch</a>
+            </div>
         </div>
     </section>
 
-    <script src="../JS/home.js"></script>
+    <!-- Skills Section -->
+    <section class="section skills">
+        <div class="container">
+            <h2 class="section-title" style="font-family: 'Orbitron', sans-serif; color: #64c8ff;">Skills & Technologies
+            </h2>
+            <div class="skills-grid">
+                <div class="skill-item glass"><img
+                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5">
+                    <p>HTML5</p>
+                </div>
+                <div class="skill-item glass"><img
+                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3">
+                    <p>CSS3</p>
+                </div>
+                <div class="skill-item glass"><img
+                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+                        alt="JavaScript">
+                    <p>JavaScript</p>
+                </div>
+                <div class="skill-item glass"><img
+                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React">
+                    <p>React</p>
+                </div>
+                <div class="skill-item glass"><img
+                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
+                        alt="Node.js">
+                    <p>Node.js</p>
+                </div>
+                <div class="skill-item glass"><img
+                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg"
+                        alt="Firebase">
+                    <p>Firebase</p>
+                </div>
+                <!-- Add more as needed -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Projects -->
+    <section class="section projects">
+        <div class="container">
+            <h2 class="section-title" style="font-family: 'Orbitron', sans-serif; color: #64c8ff;">Featured Projects
+            </h2>
+            <div class="projects-grid">
+                <div class="project-card glass">
+                    <img src="Assets/IMG/placeholder.jpg" alt="Project 1">
+                    <h3>Modern Web App</h3>
+                    <p>Built with React & Firebase</p>
+                    <a href="#" class="btn-glow small">View Details</a>
+                </div>
+                <div class="project-card glass">
+                    <img src="Assets/IMG/placeholder.jpg" alt="Project 2">
+                    <h3>E-Commerce Platform</h3>
+                    <p>Node.js + MongoDB</p>
+                    <a href="#" class="btn-glow small">View Details</a>
+                </div>
+                <div class="project-card glass">
+                    <img src="Assets/IMG/placeholder.jpg" alt="Project 3">
+                    <h3>Portfolio Site</h3>
+                    <p>HTML/CSS/JS Glassmorphism</p>
+                    <a href="#" class="btn-glow small">View Details</a>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="HTMLs/portfolio.html" class="btn-glow">View All Projects</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="glass">
+        <p>&copy; 2025 Ashen Atthanayaka. All rights reserved.</p>
+        <div class="social-icons">
+            <!-- Add your social links -->
+            <a href="#"><img src="Assets/Icons/github.svg" alt="GitHub"></a>
+            <a href="#"><img src="Assets/Icons/linkedin.svg" alt="LinkedIn"></a>
+            <a href="https://wa.me/447418315820"><img src="Assets/Icons/whatsapp.svg" alt="WhatsApp"></a>
+        </div>
+    </footer>
+
+    <script type="module" src="JS/main.js"></script>
+    <script type="module" src="JS/home.js"></script>
+    <script>
+        // Loader hide (same as index)
+        window.onload = () => {
+            document.getElementById('loader').style.opacity = '0';
+            setTimeout(() => { document.getElementById('loader').style.display = 'none'; }, 800);
+        };
+    </script>
 </body>
 
 </html>
