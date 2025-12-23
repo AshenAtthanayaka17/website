@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | Modern Technical Portfolio</title>
+    <link rel="stylesheet" href="../CSS/style.css">
+</head>
+
+<body>
+    <!-- Page Loader -->
+    <div id="page-loader">
+        <div class="loader-spinner"></div>
+    </div>
+
+    <!-- Animated Gears Background Canvas -->
+    <canvas id="gear-bg"></canvas>
+
+    <!-- Seasonal Overlay (Winter snow) -->
+    <div id="seasonal-overlay"></div>
+
+    <!-- Sticky Navbar -->
+    <nav class="navbar glass-card">
+        <div class="nav-container">
+            <div class="nav-logo">My Portfolio</div>
+            <ul class="nav-links">
+                <li><a href="home.html" class="active">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="resume.html">Resume</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div id="utc-clock">UTC --:--:--</div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero fade-in">
+        <img src="../Assets/IMG/portrait.png" alt="Portrait" class="liquid-hover">
+        <h1>Hello, I'm <span class="gradient-text">Your Name</span></h1>
+        <p class="bio-short">
+            Passionate Engineer | Innovator | Problem Solver<br>
+            Building the future with code, creativity, and precision.
+        </p>
+        <div class="countdown-section glass-card liquid-hover">
+            <h3>Next Big Event</h3>
+            <div id="countdown-display">
+                <span id="days">00</span> Days
+                <span id="hours">00</span> Hours
+                <span id="minutes">00</span> Minutes
+                <span id="seconds">00</span> Seconds
+            </div>
+            <p id="event-name">Christmas 2025</p>
+            <button id="edit-event-btn" class="gradient-border">Edit Event</button>
+        </div>
+    </section>
+
+    <!-- Gallery Preview Carousel -->
+    <section class="gallery-preview fade-in">
+        <h2 class="section-title gradient-text">Life Moments Preview</h2>
+        <div class="marquee-container">
+            <div class="gallery-marquee">
+                <div class="marquee-content">
+                    <!-- Duplicate set for seamless loop -->
+                    <div class="marquee-item"><img src="../Assets/IMG/placeholder.jpg" alt="Moment 1"></div>
+                    <div class="marquee-item"><img src="../Assets/IMG/placeholder.jpg" alt="Moment 2"></div>
+                    <div class="marquee-item"><img src="../Assets/IMG/placeholder.jpg" alt="Moment 3"></div>
+                    <div class="marquee-item"><img src="../Assets/IMG/placeholder.jpg" alt="Moment 4"></div>
+                    <div class="marquee-item"><img src="../Assets/IMG/placeholder.jpg" alt="Moment 5"></div>
+                    <div class="marquee-item"><img src="../Assets/IMG/placeholder.jpg" alt="Moment 6"></div>
+                    <!-- Repeat for infinite scroll -->
+                    <div class="marquee-item"><img src="../Assets/IMG/placeholder.jpg" alt="Moment 1"></div>
+                    <div class="marquee-item"><img src="../Assets/IMG/placeholder.jpg" alt="Moment 2"></div>
+                    <div class="marquee-item"><img src="../Assets/IMG/placeholder.jpg" alt="Moment 3"></div>
+                    <div class="marquee-item"><img src="../Assets/IMG/placeholder.jpg" alt="Moment 4"></div>
+                    <div class="marquee-item"><img src="../Assets/IMG/placeholder.jpg" alt="Moment 5"></div>
+                    <div class="marquee-item"><img src="../Assets/IMG/placeholder.jpg" alt="Moment 6"></div>
+                </div>
+            </div>
+        </div>
+        <p class="view-more"><a href="gallery.html">View Full Gallery →</a></p>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer glass-card">
+        <p>&copy; 2025 Your Name. All rights reserved.</p>
+        <p>Made with ❤️ and cutting-edge tech.</p>
+        <div class="social-icons">
+            <!-- Add your social SVGs here -->
+        </div>
+    </footer>
+
+    <script type="module" src="../JS/firebase-init.js"></script>
+    <script type="module" src="../JS/main.js"></script>
+    <script type="module" src="../JS/home.js"></script>
+</body>
+
+</html>
