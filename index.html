@@ -4,109 +4,141 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login | Modern Technical Portfolio</title>
-    <link rel="stylesheet" href="CSS/style.css">
-    <!-- Assume style.css includes global theme, glassmorphism, and animated background -->
+    <link rel="stylesheet" href="CSS/styles.css">
+    <link rel="stylesheet" href="CSS/animations.css">
+    <link rel="stylesheet" href="CSS/functions.css">
+    <title>Ashen Atthanayaka</title>
 </head>
 
 <body>
-    <!-- Animated Gears Background Canvas (handled in main.js if needed) -->
-    <canvas id="gear-bg"></canvas>
+    <header>
+        <span class="header-content">
+            <h1 id="name">Ashen Atthanayaka</h1>
+            <h3 id="tagline">Web Developer | Programmer | Aviation Enthusiast</h3>
+        </span>
 
-    <!-- Seasonal Particles (Winter snow default, init in main.js) -->
-    <div id="seasonal-overlay"></div>
+        <nav id="navbar">
+            <button class="nav-button" onclick="location.href='HTMLs/home.html'">Home</button>
+            <button class="nav-button" onclick="location.href='HTMLs/about.html'">About Me</button>
+            <button class="nav-button" onclick="location.href='HTMLs/projects.html'">Projects</button>
+            <button class="nav-button" onclick="location.href='HTMLs/contact.html'">Contact</button>
+        </nav>
 
-    <div class="login-container glass-card">
-        <div class="login-header">
-            <h1>Welcome Back</h1>
-            <p class="tagline">Engineering the Future – One Login at a Time</p>
-            <div class="countdown-teaser">
-                <span>Christmas in </span><span id="countdown">2</span><span> days</span>
+    </header>
+
+    <main>
+        <section id="about-my-site">
+            <h1 id="Tt-about-site">About This Site !</h1>
+            <p id="about-site-para">
+                This website serves as a masking layer for Ashen Atthanayaka’s personal online presence, created with
+                the
+                intention of protecting personal information while still maintaining a controlled and meaningful digital
+                footprint. In an age where online visibility often comes at the cost of privacy, this site exists as a
+                deliberate boundary between what is public and what remains personal.
+                <br>
+                <br>
+                Not everyone who visits a website needs access to private details, background information, or direct
+                points
+                of contact. This site is designed to filter that access thoughtfully. It provides only what is
+                necessary,
+                relevant, and appropriate for a general audience, while keeping sensitive or personal information out of
+                reach from those who do not require it.
+                <br>
+                <br>
+                Rather than functioning as a traditional personal website filled with extensive personal data, this
+                platform
+                acts as a shield—presenting a minimal, intentional surface. It allows Ashen to exist online without
+                overexposure, reducing the risks associated with unwanted attention, data misuse, or privacy intrusion.
+                <br>
+                <br>
+                This approach reflects a broader philosophy: privacy is not secrecy, but choice. The site does not aim
+                to
+                mislead or obscure identity, but to respect boundaries and maintain control over how personal
+                information is
+                shared and consumed. Any deeper access or detailed information is reserved for trusted contexts and
+                direct
+                communication, not for unrestricted public browsing.
+                <br>
+                <br>
+                Ultimately, this masking site exists to balance presence and protection—allowing participation in the
+                digital world without sacrificing personal safety, autonomy, or peace of mind.
+            </p>
+        </section>
+
+        <section id="Video-Gallery">
+
+            <div id="Player-box">
+                <iframe width="300" height="170" src="https://www.youtube.com/embed/vGAIeEMd1SY?list=RDvGAIeEMd1SY"
+                    title="WePlus - Hathara Kendare (හතර කේන්දරේ) Medley | Handawaka (හැන්දෑවක)" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
-        </div>
 
-        <div class="auth-tabs">
-            <button class="tab-btn active" data-tab="google">Google</button>
-            <button class="tab-btn" data-tab="email">Email/Password</button>
-            <button class="tab-btn" data-tab="phone">Phone</button>
-            <button class="tab-btn" data-tab="guest">Guest</button>
-        </div>
-
-        <div id="auth-error" class="error-message hidden"></div>
-
-        <!-- Google Tab -->
-        <div id="google-tab" class="auth-tab active">
-            <button id="google-signin-btn" class="auth-btn gradient-border">
-                <svg class="auth-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
-                        fill="#4285F4" />
-                    <path
-                        d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
-                        fill="#34A853" />
-                    <path
-                        d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"
-                        fill="#FBBC05" />
-                    <path
-                        d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
-                        fill="#EA4335" />
-                </svg>
-                Sign in with Google
-            </button>
-        </div>
-
-        <!-- Email/Password Tab -->
-        <div id="email-tab" class="auth-tab">
-            <form id="email-form">
-                <input type="email" id="email-input" placeholder="Email" required>
-                <input type="password" id="password-input" placeholder="Password" required>
-                <button type="submit" class="auth-btn gradient-border">
-                    <svg class="auth-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z" />
-                        <path d="M3 7l9 6l9 -6" />
-                        <path fill="none" d="M0 0h24v24H0z" />
-                    </svg>
-                    Sign In
-                </button>
-                <a href="#" id="forgot-password" class="forgot-link">Forgot Password?</a>
-            </form>
-        </div>
-
-        <!-- Phone Tab -->
-        <div id="phone-tab" class="auth-tab">
-            <div id="recaptcha-container"></div>
-            <input type="tel" id="phone-input" placeholder="Phone Number (e.g. +44...)">
-            <button id="phone-signin-btn" class="auth-btn gradient-border">
-                <svg class="auth-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -14 -12A2 2 0 0 1 5 4" />
-                    <path fill="none" d="M0 0h24v24H0z" />
-                </svg>
-                Send Code
-            </button>
-            <div id="verification-section" class="hidden">
-                <input type="text" id="code-input" placeholder="Verification Code">
-                <button id="confirm-code-btn" class="auth-btn gradient-border">Confirm</button>
+            <div id="Player-box">
+                <iframe width="300" height="170" src="https://www.youtube.com/embed/eXtPsLLc7qM?list=RDeXtPsLLc7qM"
+                    title="18 Wannam  ( 18 වන්නම් ) | Yuki Navaratne &amp; Ravi Jay | Official Animation Video by @Chakra Visuals"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
-        </div>
 
-        <!-- Guest Tab -->
-        <div id="guest-tab" class="auth-tab">
-            <button id="guest-signin-btn" class="auth-btn gradient-border">
-                <svg class="auth-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
-                    <path fill="none" d="M0 0h24v24H0z" />
-                </svg>
-                Continue as Guest
-            </button>
-        </div>
-    </div>
+            <div id="Player-box">
+                <iframe width="300" height="170" src="https://www.youtube.com/embed/prU5IKEMx24?list=RDprU5IKEMx24"
+                    title="ZOORY | Yamu Sella Katharagama | යමු සෙල්ල කතරගම EDM Cover" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
 
-    <script type="module" src="JS/firebase-config.js"></script>
-    <script type="module" src="JS/auth.js"></script>
-    <script type="module" src="JS/main.js"></script>
-    <!-- auth.js will attach event listeners to buttons/forms and handle redirects/errors -->
+            <div id="Player-box">
+                <iframe width="300" height="170" src="https://www.youtube.com/embed/OVVZ9EsPdMM?list=RDOVVZ9EsPdMM"
+                    title="Naga Salamba | නාග සළඹ වැයෙන පදට | Malani Bulathsinghala | Cover" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+
+            <div id="Player-box">
+                <iframe width="300" height="170" src="https://www.youtube.com/embed/vBGSNSocoKg?list=RDvBGSNSocoKg"
+                    title="Neela Jalase Rangana Hansa Kumari | නීල ජලාසේ | EDM HOUSE &amp; MANTRA MIX Cover by CHAKRA EDM"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+
+            <div id="Player-box">
+                <iframe width="300" height="170" src="https://www.youtube.com/embed/bXbLLkwrc1c"
+                    title="Pancha Kalyaniye | පන්ච කයානියේ | EDM HOUSE &amp; MANTRA MIX Cover by CHAKRA EDM"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+
+            <div id="Player-box">
+                <iframe width="300" height="170" src="https://www.youtube.com/embed/ooWgvI3LciA" title="Balikaviyan Thaksala Doren | බාලිකාවියන් තක්සලා දොරෙන් | EDM HOUSE &amp; MANTRA MIX Cover by CHAKRA EDM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+
+            <div id="Player-box">
+                <iframe width="300" height="170" src="https://www.youtube.com/embed/m75q26PCMAA?list=RDm75q26PCMAA" title="Ganga Addara Ma (ගඟ අද්දර මා) | Cover By Miyuru Sangeeth" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+
+            <div id="Player-box">
+                <iframe width="300" height="170" src="https://www.youtube.com/embed/qe6uwIJ5C8M?list=RDqe6uwIJ5C8M" title="AVATAR First Medley - Heen Kaluware Medley (Live Performance 2024)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+
+            <div id="Player-box">
+                <iframe width="300" height="170" src="https://www.youtube.com/embed/qImlaatzT-k?list=RDqImlaatzT-k" title="Nadee Ganga Tharanaye (නදී ගංගා තරණයේ) | Chitral &#39;Chity&#39; Somapala | Official Music Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+
+            <div id="Player-box">
+                <iframe width="300" height="170" src="https://www.youtube.com/embed/AYRCl3IL2Ck?list=RDAYRCl3IL2Ck" title="Tharuka Niwa (තාරුකා නිවා) | Cover by Thirathi Amoda" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+
+            <div id="Player-box">
+                <iframe width="300" height="170" src="https://www.youtube.com/embed/GL-njzbEHew?list=RDGL-njzbEHew" title="Hemi Hemin Mata Lan weela (දැන දැනත් දුර ගියා) - Covered By Maduu shanka" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+
+        </section>
+    </main>
+
 </body>
 
 </html>
